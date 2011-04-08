@@ -95,7 +95,7 @@ module Devise
       end
       
       def change_password!
-        update_ldap(:userpassword => Net::LDAP::Password.generate(:sha, @new_password))
+        update_ldap(:userpassword => Net::LDAP::Password.generate(:md5, @new_password))
       end
 
       def in_required_groups?     
